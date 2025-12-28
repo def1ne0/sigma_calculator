@@ -1,11 +1,13 @@
 use iced::{Element, Fill, Alignment};
 use iced::widget::{button, row, column, text, text_input, container};
+
 #[derive(Debug, Clone, Default)]
 struct Calc {
     first_value: String,
     second_value: String,
     result_value: String,
 }
+
 #[derive(Debug, Clone)]
 enum Message {
     Plus,
@@ -60,6 +62,7 @@ impl Calc {
             .into()
     }
 }
+
 fn main() -> iced::Result {
     iced::run(Calc::update, Calc::view)
 }
