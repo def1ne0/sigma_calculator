@@ -1,6 +1,7 @@
 use iced::{Alignment, Element, Fill};
 use iced::widget::{button, column, container, text, text_input};
 use meval::eval_str;
+
 pub fn main() -> iced::Result {
     iced::run(Calculator::update, Calculator::view)
 }
