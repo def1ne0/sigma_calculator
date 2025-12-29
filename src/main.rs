@@ -34,7 +34,7 @@ impl Calculator {
             },
             Message::Evaluate => {
                 self.result = eval_str(self.expression.clone())
-                    .unwrap()
+                    .unwrap_or(f64::NAN)
                     .to_string()
             }
         }
