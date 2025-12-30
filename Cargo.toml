@@ -6,3 +6,10 @@ edition = "2024"
 [dependencies]
 iced = "0.14.0"
 meval = "0.2.0"
+
+[[bin]]
+name = "calculator"
+path = "src/main.rs"
+
+[target.x86_64-pc-windows-gnu]
+linker = "x86_64-w64-mingw32-gcc"
