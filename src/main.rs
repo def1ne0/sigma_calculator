@@ -33,7 +33,7 @@ struct Calculator {
     result: String,
 }
 
-fn calc_button_style<'a>() -> impl Fn(&Theme, button::Status) -> Style + 'a{
+fn calc_button_style<'a>() -> impl Fn(&Theme, button::Status) -> Style + 'a {
     |_t, _status|  {
         Style {
             background: Background::Color(iced_core::Color {
